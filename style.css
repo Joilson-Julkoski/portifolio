@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgb(230, 229, 229);
+  background-color: #171917;
+  /* background-image: radial-gradient(#2d312d, #171917 ); */
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+
+/* @keyframes exemple {
+
+  100% {  text-shadow: rgb(101, 252, 0) 1px 0 10px;
+    color: rgb(137, 248, 63);
+  }
+}
+ */
+
+button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  color: #00bf63;
+
+}
+
+
+.tec_button {
+  border: #00a555 solid;
+  padding: 10px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: #00a555 -5px 5px;
+
+}
+
+a {
+  text-decoration: none;
+  color: azure;
+}
+
+.copy_click {
+  /* padding: 5px; */
+}
+
