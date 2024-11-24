@@ -2,13 +2,14 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import React from "react";
 import { ArrowOutward } from "@mui/icons-material";
 import ServiceCard from "../components/serviceCard";
+import ProjectCard from "../components/projectCard";
 
 function Main() {
     return <Stack gap={"80px"} direction={"column"}>
         <Stack direction={"row"} width={"100%"}>
             <img src="logo.png" alt="logo da marca Pfleger" />
         </Stack>
-        <Stack>
+        <Stack gap={"24px"}>
             <Typography variant="h1">
                 Cada projeto é uma jornada:  do conceito à concretização
             </Typography>
@@ -24,6 +25,13 @@ function Main() {
                 </Stack>
             </Button>
         </Stack>
+        <Stack direction={"row"} flexWrap={"wrap"}>
+            <ProjectCard title={"Travelgram"} text={"Rede social onde as pessoas mostram os registros de suas viagens pelo mundo"} />
+            <ProjectCard title={"Travelgram"} text={"Rede social onde as pessoas mostram os registros de suas viagens pelo mundo"} />
+            <ProjectCard title={"Travelgram"} text={"Rede social onde as pessoas mostram os registros de suas viagens pelo mundo"} />
+            <ProjectCard title={"Travelgram"} text={"Rede social onde as pessoas mostram os registros de suas viagens pelo mundo"} />
+        </Stack>
+
         <Stack direction={"row"}>
 
             <img src="" alt="foto giovanna pfleger" />

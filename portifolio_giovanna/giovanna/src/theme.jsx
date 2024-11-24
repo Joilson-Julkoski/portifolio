@@ -10,10 +10,12 @@ const theme = createTheme({
         },
     },
     typography: {
-        fontFamily: 'Montserrat, Arial, sans-serif',
+        fontFamily: 'Roboto, Arial, sans-serif',
         fontSize: "16px",
         color: '#1D1D1D',
         h1: {
+            fontFamily: 'Montserrat, Arial, sans-serif',
+
             fontSize: '48px',
         },
     },
@@ -30,7 +32,7 @@ const theme = createTheme({
                 },
                 contained: {
                     background: "rgb(69,103,183)",
-                    background: "linear-gradient(65deg, rgba(69,103,183,1) 0%, rgba(100,149,237,1) 54%, rgba(122,40,138,1) 100%)",
+                    background: "linear-gradient(175deg, rgba(69,103,183,1) 0%, rgba(100,149,237,1) 54%, rgba(122,40,138,1) 100%)",
                     color: '#FFFFFF', // Cor do texto
                     '&:hover': {
                         backgroundColor: '#333333', // Cor de fundo ao passar o mouse
