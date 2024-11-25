@@ -1,21 +1,26 @@
 import { createTheme } from '@mui/material';
 
+
+const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 const theme = createTheme({
     palette: {
+        mode: darkMode ? "dark" : "light",
         primary: {
-            main: '#1D1D1D',
+            main: darkMode ? '#1D1D1D' : "#FFFFFF",
         },
         secondary: {
-            main: '#F7F9FC',
+            main: darkMode ? "#FFFFFF" : '#1D1D1D',
         },
     },
     typography: {
-        fontFamily: 'Roboto, Arial, sans-serif',
-        fontSize: "16px",
-        color: '#1D1D1D',
+        allVariants: {
+            fontFamily: 'Roboto, Arial, sans-serif',
+            fontSize: "16px",
+            color: darkMode ? "#FFFFFF" : '#1D1D1D',
+        },
         h1: {
             fontFamily: 'Montserrat, Arial, sans-serif',
-
             fontSize: '48px',
         },
     },
@@ -32,8 +37,10 @@ const theme = createTheme({
                 },
                 contained: {
                     background: "rgb(69,103,183)",
-                    background: "linear-gradient(175deg, rgba(69,103,183,1) 0%, rgba(100,149,237,1) 54%, rgba(122,40,138,1) 100%)",
+                    background: darkMode ? "linear-gradient(175deg, rgba(69,103,183,0.2) 0%, rgba(100,149,237,0.2) 54%, rgba(122,40,138,0.2) 100%)"
+                    :  "linear-gradient(175deg, rgba(69,103,183,1) 0%, rgba(100,149,237,1) 54%, rgba(122,40,138,1) 100%)",
                     color: '#FFFFFF', // Cor do texto
+                    border: darkMode ? "1px solid #4567B7" : "none",
                     '&:hover': {
                         backgroundColor: '#333333', // Cor de fundo ao passar o mouse
                     },
