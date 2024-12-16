@@ -21,7 +21,7 @@ function Main() {
                     style={{
                         transition: "0.3s ease", // Transição suave
                     }}
-                />
+                />  
 
             </Bounce >
         </Stack>
@@ -48,7 +48,7 @@ function Main() {
 
             <Stack direction={"row"} gap={"24px"} flexWrap={"wrap"}>
                 {Object.keys(projects).map((e) => (
-                    <ProjectCard title={projects[e].title} tags={projects[e].tags} src={projects[e].src} text={projects[e].text} />
+                    <ProjectCard title={projects[e].title} tags={projects[e].tags} src={projects[e].src} text={projects[e].text} projectId={e}/>
                 )
                 )}
             </Stack>
@@ -129,6 +129,4 @@ function Main() {
 }
 
 export default Main
-
-///  Oi meu bem, te amo tanto tanto tanto meu amor lindo
 

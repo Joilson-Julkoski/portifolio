@@ -3,9 +3,10 @@ import { Box, Stack, Typography } from "@mui/material";
 import React from "react";
 import theme from "../theme";
 
-function ProjectCard({ src, title, text, link, tags }) {
+function ProjectCard({ src, title, text, link, tags, projectId }) {
     // TODO: ver a responsividade desse flex
     return <Box
+        onClick={() => { window.location.href = `project/${projectId}` }}
         className="projectCard"
         // width={"50%"}
         position={"relative"}
@@ -39,7 +40,7 @@ function ProjectCard({ src, title, text, link, tags }) {
                     </Stack>
                     <Stack direction={"row"} gap={"16px"} marginBottom={"16px"}>
                         {tags.map((e, index) => (
-                            <Box width={"fit-content"} bgcolor={"#4567B7"} padding={"2px 10px"} borderRadius={"150px"}> 
+                            <Box width={"fit-content"} bgcolor={"#4567B7"} padding={"2px 10px"} borderRadius={"150px"}>
                                 <Typography fontSize={"14px"}>
                                     {e}
                                 </Typography>
