@@ -7,10 +7,11 @@ import { MobileProvider } from './providers/screenSize';
 function App() {
   return (
     <>
-      <AnimatedCursor innerSize={20}
-        outerSize={20}
-        color='253, 133, 58' />
       <MobileProvider>
+        {window.innerWidth > 768 && <AnimatedCursor innerSize={20}
+          outerSize={20}
+          color='253, 133, 58' />}
+
         <Home />
       </MobileProvider>
     </>

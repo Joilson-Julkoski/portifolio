@@ -25,27 +25,31 @@ function App() {
                             Olá!
                         </Typography>
                     </Stack>
-                    <Box width={"100%"}>
-                        <Typography color='#E8E8E8' fontSize={"52px"} textAlign={"center"} fontWeight={"600"}>
-                            Me chamo <span style={{ color: '#FD853A' }}>Joilson Julkoski</span>, Desenvolvedor Full Stack
-                        </Typography>
-                        <Typography color='#E8E8E8' fontSize={"24px"} textAlign={"end"} fontWeight={"600"} >
-                            2 anos de <Typography style={{ fontSize: "16px" }} fontWeight={"400"}>Experiência</Typography>
-                        </Typography>
-                    </Box>
-                    <model-viewer
-                        src="old_pc.glb"
-                        alt="Um modelo 3D de exemplo"
-                        auto-rotate
-                        camera-controls
-                        environment-image="whipple_creek_regional_park_04_1k.hdr"
-                        tone-mapping="neutral"
-                        disable-tap
-                        camera-orbit="75deg 95deg 8m"
-                        disable-zoom
-                        style={{ width: '100%', height: '500px' }}
+                    <Stack direction={"column"}>
 
-                    />
+                        <Box width={"100%"}>
+                            <Typography color='#E8E8E8' fontSize={isMobile ? "42px" : "52px"} textAlign={"center"} fontWeight={"600"}>
+                                Me chamo <span style={{ color: '#FD853A' }}>Joilson Julkoski</span>, Desenvolvedor Full Stack
+                            </Typography>
+                            <Typography color='#E8E8E8' fontSize={"24px"} textAlign={"end"} fontWeight={"600"} >
+                                2 anos de <Typography style={{ fontSize: "16px" }} fontWeight={"400"}>Experiência</Typography>
+                            </Typography>
+                        </Box>
+                        <model-viewer
+                            src="old_pc.glb"
+                            alt="Um modelo 3D de exemplo"
+                            auto-rotate
+                            camera-controls
+                            environment-image="whipple_creek_regional_park_04_1k.hdr"
+                            tone-mapping="neutral"
+                            disable-tap
+                            camera-orbit="75deg 95deg 6m"
+                            disable-zoom
+                            style={{ width: '100%', height: '300px' }}
+
+                        />
+                    </Stack>
+
                     {/* <img style={{ position: "absolute", bottom: "0", width: "300px" }} src="charcter.svg" alt="" /> */}
                     <Stack direction={'row'} position={"absolute"}
                         background={"rgba(255, 255, 255, 0.1)"}
