@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Button, Typography, Stack, ThemeProvider, Divider, Link } from '@mui/material';
 import theme from '../muiTheme';
 import Folder from '../components/folder';
@@ -10,6 +10,35 @@ import { useMobile } from '../providers/screenSize';
 function App() {
 
     const { isMobile } = useMobile()
+
+    const viewerRef = useRef(null);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+
+    const handleLoad = async () => {
+      // Acesse o modelo diretamente usando a API `model-viewer`
+      const model = await viewer.model;
+
+      if (model) {
+        // Iterar pelos materiais do modelo
+        model.materials.forEach((material) => {
+          if (material.pbrMetallicRoughness) {
+            // Alterar o baseColorFactor (RGBA)
+            material.pbrMetallicRoughness.setBaseColorFactor([1.0, 0.827, 0.733, 1.0]); 
+          }
+        });
+      }
+    };
+
+    // Adiciona o evento de load
+    viewer.addEventListener("load", handleLoad);
+
+    return () => {
+      viewer.removeEventListener("load", handleLoad);
+    };
+  }, []);
+
 
     return (
         <ThemeProvider theme={theme}>
@@ -36,11 +65,13 @@ function App() {
                             </Typography>
                         </Box>
                         {!isMobile && <model-viewer
+                            ref={viewerRef}
                             src="old_pc.glb"
                             alt="Um modelo 3D de exemplo"
                             auto-rotate
                             camera-controls
-                            environment-image="whipple_creek_regional_park_04_1k.hdr"
+                            // environment-image="whipple_creek_regional_park_04_1k.hdr"
+                             exposure="0.5"
                             tone-mapping="neutral"
                             disable-tap
                             camera-orbit="75deg 95deg 6m"
@@ -61,7 +92,7 @@ function App() {
                         <Button variant='contained'>
                             <Typography>Portfolio </Typography>
                         </Button>
-                        <Button variant='text'>
+                        <Button variant='text' onClick={() => {window.open("https://api.whatsapp.com/send?phone=47984167365&text=Oi%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20mais%20sobre%20isso!", "_blank")}}>
                             <Typography>Me contrate</Typography>
                         </Button>
                     </Stack>
@@ -101,24 +132,24 @@ function App() {
                     <Stack direction={"row"} justifyContent={"space-around"} width={"100%"} height={"100%"} gap={"8px"}>
                         <Stack justifyContent={"space-between"} height={"100%"}  >
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     Python
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     2 anos de experiencia
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     NodeJs
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     1 ano de experiencia
                                 </Typography>
                             </Box>
@@ -131,26 +162,26 @@ function App() {
                         </Stack>
                         <Stack justifyContent={"space-between"} height={"100%"}>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
 
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
 
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     ReactJs
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
                                     1 anos de experiencia
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
 
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile ? "16px" : "24px" }}>
 
                                 </Typography>
                             </Box>
@@ -166,7 +197,7 @@ function App() {
                             Entre em contato comigo
                         </Typography>
                         <Button variant='contained'>
-                            <Stack direction={"row"}>
+                            <Stack direction={"row"} onClick={() => {window.open("https://api.whatsapp.com/send?phone=47984167365&text=Oi%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20mais%20sobre%20isso!", "_blank")}}>
                                 <Typography >Me contrate</Typography>
                             </Stack>
                             <ArrowOutwardIcon />
