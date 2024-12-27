@@ -35,7 +35,7 @@ function App() {
                                 2 anos de <Typography style={{ fontSize: "16px" }} fontWeight={"400"}>Experiência</Typography>
                             </Typography>
                         </Box>
-                        <model-viewer
+                        {!isMobile && <model-viewer
                             src="old_pc.glb"
                             alt="Um modelo 3D de exemplo"
                             auto-rotate
@@ -47,7 +47,8 @@ function App() {
                             disable-zoom
                             style={{ width: '100%', height: '300px' }}
 
-                        />
+                        />}
+
                     </Stack>
 
                     {/* <img style={{ position: "absolute", bottom: "0", width: "300px" }} src="charcter.svg" alt="" /> */}
@@ -100,24 +101,24 @@ function App() {
                     <Stack direction={"row"} justifyContent={"space-around"} width={"100%"} height={"100%"} gap={"8px"}>
                         <Stack justifyContent={"space-between"} height={"100%"}  >
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     Python
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     2 anos de experiencia
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     NodeJs
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     1 ano de experiencia
                                 </Typography>
                             </Box>
@@ -130,26 +131,26 @@ function App() {
                         </Stack>
                         <Stack justifyContent={"space-between"} height={"100%"}>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
 
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
 
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     ReactJs
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
                                     1 anos de experiencia
                                 </Typography>
                             </Box>
                             <Box>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
 
                                 </Typography>
-                                <Typography sx={{ color: "white", fontSize: "24px" }}>
+                                <Typography sx={{ color: "white", fontSize: isMobile? "16px" : "24px" }}>
 
                                 </Typography>
                             </Box>
