@@ -197,7 +197,7 @@ function App() {
                             Entre em contato comigo
                         </Typography>
                         <Button variant='contained'>
-                            <Stack direction={"row"} onClick={() => {window.open("https://api.whatsapp.com/send?phone=47984167365&text=Oi%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20mais%20sobre%20isso!", "_blank")}}>
+                            <Stack direction={"row"} onClick={() => {window.open("https://api.whatsapp.com/send?phone=47991299228&text=Oi%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20mais%20sobre%20isso!", "_blank")}}>
                                 <Typography >Me contrate</Typography>
                             </Stack>
                             <ArrowOutwardIcon />
@@ -216,7 +216,7 @@ function App() {
                             <Stack gap={"16px"} width="100%">
 
                                 <Typography sx={{ color: "#FD853A", fontSize: "20px" }}>Contato</Typography>
-                                <Typography sx={{ color: "white" }}>(47) 98416-7365</Typography>
+                                <Typography sx={{ color: "white" }}>(47) 9129-9228</Typography>
                                 <Typography sx={{ color: "white" }}>joilson7548@gmail.com</Typography>
                                 <Link style={{ textDecoration: "none" }} href="https://www.linkedin.com/in/joilson-julkoski/" target="_blank">
                                     <Typography sx={{ color: "white", textDecoration: "none" }}> Linkedin</Typography>
