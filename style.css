@@ -1,0 +1,30 @@
+:root {
+  --BACKGROUND: #0D1117;
+  --FONT: #EEEEEE;
+  --PRIMARY: #FF5C00;
+}
+
+body {
+  background-color: var(--BACKGROUND);
+margin: 5% 10%;
+font-family: "Gill Sans", sans-serif;
+}
+
+main {
+
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  color: var(--FONT);
+}
+
+a {
+  text-decoration: none;
+  color: var(--PRIMARY);
+}
+
+ul li {
+  color: var(--PRIMARY);
+
+  
+}
