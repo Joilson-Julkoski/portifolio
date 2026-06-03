@@ -1,30 +1,244 @@
-:root {
-  --BACKGROUND: #0D1117;
-  --FONT: #EEEEEE;
-  --PRIMARY: #FF5C00;
-}
+/* ============================================================
+   joilson.dev — tema GeoCities / Web 1.0 maximalista
+   Layout em tabela (banner + sidebar + conteúdo), CSS puro.
+   GIFs animados são opcionais: veja img/README.txt.
+   ============================================================ */
 
 body {
-  background-color: var(--BACKGROUND);
-margin: 5% 10%;
-font-family: "Gill Sans", sans-serif;
+  margin: 0;
+  padding: 18px 0 40px;
+  color: #00ff66;
+  background-color: #000033;
+  /* céu estrelado: camadas de "estrelas" que se repetem */
+  background-image:
+    radial-gradient(1px 1px at 20px 30px,  #ffffff, transparent),
+    radial-gradient(1px 1px at 80px 120px, #ffffff, transparent),
+    radial-gradient(2px 2px at 150px 60px, #99ffff, transparent),
+    radial-gradient(1px 1px at 210px 180px,#ffffaa, transparent),
+    radial-gradient(1px 1px at 260px 90px, #ffffff, transparent),
+    radial-gradient(2px 2px at 120px 220px,#ff99ff, transparent);
+  background-size: 300px 300px;
+  background-attachment: fixed;
+  font-family: "Comic Sans MS", "Times New Roman", cursive, serif;
+  line-height: 1.5;
 }
 
-main {
-
+/* ============================================================
+   LAYOUT EM TABELA — o coração do visual horizontal
+   ============================================================ */
+table.layout {
+  width: 92%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: separate;
+  border: 5px ridge #c0c0c0;
+  background: rgba(0, 0, 60, 0.55);
+}
+td.banner {
+  background: #000000;
+  border-bottom: 3px groove #ff00ff;
+  text-align: center;
+  padding: 6px 10px 12px;
+}
+td.sidebar {
+  width: 180px;
+  vertical-align: top;
+  padding: 16px 12px;
+  border-right: 3px groove #6666aa;
+  background: rgba(0, 0, 0, 0.35);
+  text-align: center;
+}
+td.content {
+  vertical-align: top;
+  padding: 16px 22px;
+  text-align: left;
+}
+td.footer-row {
+  border-top: 3px groove #6666aa;
+  text-align: center;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-h1, h2, h3, h4, h5, h6, p, span {
-  color: var(--FONT);
+/* ---- HERO: texto + PC 3D lado a lado ---- */
+td.hero {
+  padding: 14px 22px;
+  border-bottom: 3px groove #6666aa;
+  background: rgba(0, 0, 0, 0.25);
+}
+table.hero-inner { width: 100%; border-collapse: collapse; }
+table.hero-inner td { vertical-align: middle; border: none; }
+.hero-text { text-align: left; padding-right: 18px; color: #ffffff; }
+.hero-pc { width: 50%; }
+.viewer { display: flex; align-items: center; gap: 6px; }
+model-viewer#pc {
+  display: block;
+  flex: 1;
+  height: 340px;
+  min-width: 180px;
+  background-color: transparent;
+  --poster-color: transparent;
+}
+.arrow {
+  flex: 0 0 auto;
+  background: #000080;
+  color: #00ffff;
+  border: 3px outset #c0c0c0;
+  font-size: 1.6em;
+  font-weight: bold;
+  line-height: 1;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+.arrow:hover { background: #00ffff; color: #000000; }
+.arrow:active { border-style: inset; }
+.model-name {
+  text-align: center;
+  color: #ffff00;
+  font-weight: bold;
+  margin: 6px 0 0;
+  text-shadow: 1px 1px #ff0000;
 }
 
-a {
+/* ---- menu lateral (botões verticais beveladas) ---- */
+.nav { list-style: none; margin: 0 0 14px; padding: 0; }
+.nav li { margin: 6px 0; }
+.nav a {
+  display: block;
+  padding: 6px 4px;
+  background: #000080;
+  border: 2px outset #c0c0c0;
+  color: #ffffff;
   text-decoration: none;
-  color: var(--PRIMARY);
+}
+.nav a:hover { background: #00ffff; color: #000000; }
+
+/* ---- títulos neon ---- */
+h1 {
+  color: #ff00ff;
+  font-size: 2.4em;
+  margin: 8px 0 0;
+  text-shadow: 2px 2px #00ffff, 0 0 10px #ff00ff;
+}
+h2 { color: #ffff00; text-shadow: 1px 1px #ff0000; margin: 10px 0 6px; }
+h3 { color: #00ffff; margin: 0; }
+
+/* ---- links ---- */
+a         { color: #ffff00; font-weight: bold; }
+a:visited { color: #ff77ff; }
+a:hover   { color: #000000; background: #00ffff; }
+
+/* ---- barra deslizante (marquee) ---- */
+marquee {
+  background: #000000;
+  border: 2px ridge #ff00ff;
+  color: #00ff66;
+  padding: 4px 0;
+  margin: 6px 0 0;
+  font-weight: bold;
 }
 
-ul li {
-  color: var(--PRIMARY);
-
-  
+/* ---- divisor arco-íris ---- */
+hr.rainbow {
+  border: none;
+  height: 6px;
+  margin: 16px auto;
+  width: 100%;
+  background: repeating-linear-gradient(90deg,
+    #ff0000 0 12px, #ff9900 12px 24px, #ffff00 24px 36px,
+    #00cc00 36px 48px, #0099ff 48px 60px, #cc00ff 60px 72px);
 }
+
+/* ---- projetos LADO A LADO (duas colunas) ---- */
+table.projects { width: 100%; border-collapse: collapse; }
+table.projects td {
+  width: 50%;
+  border: 2px groove #6666aa;
+  padding: 12px 16px;
+  vertical-align: top;
+  color: #ffffff;
+  background: rgba(0, 0, 80, 0.5);
+}
+table.projects p { margin: 6px 0 0; }
+
+/* ---- caixa "under construction" ---- */
+.construction {
+  display: inline-block;
+  margin: 6px auto;
+  padding: 6px 18px;
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 3px outset #ffcc00;
+  background: repeating-linear-gradient(45deg,
+    #ffcc00 0 18px, #000000 18px 36px);
+}
+.construction span { background: #ffcc00; padding: 2px 6px; border-radius: 2px; }
+
+/* ---- contador de visitas (odômetro) ---- */
+.counter {
+  display: inline-block;
+  background: #000000;
+  color: #00ff00;
+  font-family: "Courier New", monospace;
+  font-size: 1.1em;
+  letter-spacing: 3px;
+  border: 3px inset #444444;
+  padding: 2px 6px;
+}
+
+/* ---- botões 88x31 (em linha no rodapé) ---- */
+.buttons { margin: 6px 0; }
+.btn88 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 31px;
+  margin: 3px;
+  vertical-align: middle;
+  font-family: "MS Sans Serif", Tahoma, Geneva, sans-serif;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1.05;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  border: 2px outset #c0c0c0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.btn88.netscape { background: #000080; }
+.btn88.notepad  { background: #008080; }
+.btn88.html     { background: #800000; }
+.btn88.res      { background: #004000; }
+
+/* ---- texto piscando ---- */
+.blink { animation: blink 1s steps(2, start) infinite; color: #ff3333; font-weight: bold; }
+@keyframes blink { to { visibility: hidden; } }
+
+small { color: #99ccff; }
+
+/* ============================================================
+   Páginas do BLOG — painel legível por cima do tema
+   ============================================================ */
+.post, .blog-panel {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  text-align: left;
+  background: rgba(0, 0, 40, 0.85);
+  border: 4px ridge #c0c0c0;
+}
+.post h1 { font-size: 2em; }
+.post h2 { color: #00ffff; text-shadow: 1px 1px #000; }
+.post p { color: #f0f0f0; line-height: 1.7; }
+.post code {
+  background: #000;
+  color: #00ff66;
+  padding: 1px 4px;
+  font-family: "Courier New", monospace;
+}
+.post a, .blog-list a { color: #66ccff; }
+.blog-list { list-style: none; padding: 0; }
+.blog-list li { padding: 8px 0; border-bottom: 1px dashed #4444aa; color: #f0f0f0; }

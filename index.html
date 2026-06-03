@@ -1,51 +1,169 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title></title>
+    <title>~ Joilson Julkoski ~</title>
     <link href="./style.css" rel="stylesheet" />
+
+    <!-- PC 3D: trio de versões FIXAS e compatíveis (não usar "latest"!) -->
+    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.min.js" } }
+    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@1.5.0/dist/model-viewer-effects.min.js"></script>
   </head>
   <body>
-    <h1>Opa, <strong>Joilson</strong> aqui!</h1>
-    <h2>Alguns projetos que desenvolvi:</h2>
-    <ul>
-      <li>
-        <h3>
-          <a href="https://deepdatadaily.com/" target="_blank">
-            Deep Data Dail
-          </a>
-        </h3>
-        <p>
-          Ja imaginou receber as noticias mais importantes dos seus topicos de
-          interesse direto no seu email diariamente? Usando AI e o deep data
-          daily isso e possivel!
-        </p>
-      </li>
-      <li>
-        <h3>
-          <a href="https://promptoven.com/" target="_blank"> Promp Oven </a>
-        </h3>
-        <p>
-          Ja que o futuro e sobre inteligencia artificial, que os prompts sejam
-          bem escritos. E por isso que desenvolvi o prompt oven, pra dar uma
-          temperada nos seus prompts.
-        </p>
-      </li>
-    </ul>
+    <table class="layout">
+      <!-- ===== BANNER (largura total) ===== -->
+      <tr>
+        <td class="banner" colspan="2">
+          <h1>⭐ Joilson aqui! ⭐</h1>
+          <marquee scrollamount="6">
+            *~*~* Bem-vindo(a) ao cantinho do Joilson na internet *~*~*
+            &nbsp; obrigado por visitar! &nbsp; *~*~*~*~*
+          </marquee>
+        </td>
+      </tr>
 
-    <h2>Meus contatos:</h2>
-    <ul>
-      <li>
-        <a
-          target="_blank"
-          href="https://www.linkedin.com/in/joilson-julkoski-programador/"
-          >Linkedin</a
-        >
-      </li>
-      <li>
-        <a target="_blank" href="https://github.com/Joilson-Julkoski">Github</a>
-      </li>
-    </ul>
+      <!-- ===== HERO: texto + PC 3D lado a lado ===== -->
+      <tr>
+        <td class="hero" colspan="2">
+          <table class="hero-inner">
+            <tr>
+              <td class="hero-text">
+                <p>
+                  Desenvolvedor de software. Construo ferramentas web e produtos
+                  com IA — do back-end ao que aparece na tela.
+                </p>
+                <p><small>↻ arrasta pra girar &nbsp;·&nbsp; use ‹ › pra trocar de modelo</small></p>
+              </td>
+              <td class="hero-pc">
+                <div class="viewer">
+                  <button class="arrow" id="prev" aria-label="modelo anterior">‹</button>
+                  <model-viewer
+                    id="pc"
+                    src="assets/old_pc.glb"
+                    camera-controls
+                    auto-rotate
+                    interaction-prompt="none"
+                    camera-orbit="120deg 70deg auto"
+                    camera-target="auto auto auto"
+                    exposure="1"
+                    shadow-intensity="0"
+                    environment-image="neutral">
+                    <effect-composer render-mode="quality">
+                      <outline-effect strength="1000" smoothing="0" color="#00ff66" blend-mode="ADD"></outline-effect>
+                      <glitch-effect strength="0.35" mode="sporadic" blend-mode="default"></glitch-effect>
+                      <pixelate-effect granularity="2" blend-mode="default"></pixelate-effect>
+                    </effect-composer>
+                  </model-viewer>
+                  <button class="arrow" id="next" aria-label="próximo modelo">›</button>
+                </div>
+                <p class="model-name" id="model-name">meu velho PC</p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+      <tr>
+        <!-- ===== MENU LATERAL ===== -->
+        <td class="sidebar">
+          <ul class="nav">
+            <li><a href="#projetos">★ Projetos</a></li>
+            <li><a href="blog/">★ Blog</a></li>
+            <li><a href="#contato">★ Contato</a></li>
+          </ul>
+
+          <hr class="rainbow" />
+
+          <p>
+            Visitante nº<br />
+            <span class="counter">00042</span>
+          </p>
+          <p>
+            <a href="mailto:joilson7548@gmail.com?subject=Assinando%20seu%20livro%20de%20visitas">
+              📖 Livro de<br />visitas
+            </a>
+          </p>
+
+          <hr class="rainbow" />
+
+          <p class="construction">🚧 <span>EM OBRAS</span> 🚧</p>
+        </td>
+
+        <!-- ===== CONTEÚDO ===== -->
+        <td class="content">
+          <h2 id="projetos">&gt;&gt; Projetos <span class="blink">NOVO!</span></h2>
+          <table class="projects">
+            <tr>
+              <td>
+                🔥
+                <h3><a href="https://deepdatadaily.com/" target="_blank">Deep Data Daily</a></h3>
+                <p>
+                  Newsletter diária automatizada com IA: você escolhe seus
+                  tópicos e recebe no email um resumo das notícias mais
+                  relevantes, sem garimpar nada.
+                </p>
+              </td>
+              <td>
+                🔥
+                <h3><a href="https://promptoven.com/" target="_blank">Prompt Oven</a></h3>
+                <p>
+                  Ferramenta que assa os seus prompts: cole um prompt cru e
+                  receba uma versão mais clara e bem estruturada, pronta pra
+                  tirar o melhor do modelo de IA.
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <h2>📓 <a href="blog/">Blog</a></h2>
+          <p>Uns escritos meus de vez em quando.</p>
+        </td>
+      </tr>
+
+      <!-- ===== RODAPÉ (largura total) ===== -->
+      <tr>
+        <td class="footer-row" colspan="2" id="contato">
+          <div class="buttons">
+            <span class="btn88 netscape">Netscape NOW!</span>
+            <span class="btn88 notepad">Made with NOTEPAD</span>
+            <span class="btn88 html">Valid HTML 4.0</span>
+            <span class="btn88 res">Best viewed 800×600</span>
+          </div>
+          <p>
+            <a target="_blank" href="https://www.linkedin.com/in/joilson-julkoski-programador/">LinkedIn</a>
+            &nbsp;•&nbsp;
+            <a target="_blank" href="https://github.com/Joilson-Julkoski">GitHub</a>
+            &nbsp;•&nbsp;
+            <a href="mailto:joilson7548@gmail.com">Email</a>
+          </p>
+          <p><small>Last updated: 06/2026 &nbsp;·&nbsp; Best viewed in Netscape Navigator</small></p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- carrossel de modelos 3D -->
+    <script>
+      const models = [
+        { src: "assets/old_pc.glb",  name: "meu velho PC" },
+        { src: "assets/pinguin.glb", name: "pinguim" },
+        { src: "assets/peixe.glb",   name: "peixe" },
+        { src: "assets/colher.glb",  name: "colher" },
+      ];
+      let i = 0;
+      const mv = document.getElementById("pc");
+      const label = document.getElementById("model-name");
+      function show(n) {
+        i = (n + models.length) % models.length;
+        mv.setAttribute("src", models[i].src);
+        label.textContent = models[i].name;
+      }
+      document.getElementById("prev").addEventListener("click", () => show(i - 1));
+      document.getElementById("next").addEventListener("click", () => show(i + 1));
+    </script>
   </body>
 </html>
