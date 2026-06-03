@@ -261,8 +261,15 @@ small { color: #99ccff; }
 .np-artist { color: #ffffff; font-size: 0.9em; }
 .np-loading { color: #99ccff; font-style: italic; }
 
-/* contador de visitas (moe-counter) */
-.counter-img { max-width: 100%; height: auto; margin-top: 4px; }
+/* contador de visitas (moe-counter, tema 3d-num) — trato neon p/ casar com a página */
+.counter-img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 4px;
+  filter: saturate(1.8) brightness(1.1)
+          drop-shadow(0 0 3px #00ffff)
+          drop-shadow(0 0 6px #ff00ff);
+}
 
 /* livro de visitas (giscus) */
 td.guestbook {
