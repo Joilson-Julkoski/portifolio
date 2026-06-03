@@ -242,3 +242,73 @@ small { color: #99ccff; }
 .post a, .blog-list a { color: #66ccff; }
 .blog-list { list-style: none; padding: 0; }
 .blog-list li { padding: 8px 0; border-bottom: 1px dashed #4444aa; color: #f0f0f0; }
+
+/* ============================================================
+   LIVROS + MÚSICA (Last.fm)
+   ============================================================ */
+.books { color: #ffffff; text-align: left; }
+.books ul { padding-left: 1.1em; }
+.books em { color: #ffff66; }
+
+.nowplaying h3 { color: #00ffff; margin: 0 0 6px; text-shadow: 1px 1px #000; }
+.nowplaying p { margin: 3px 0; }
+.np-cover {
+  width: 96px; height: 96px;
+  border: 2px ridge #c0c0c0;
+  image-rendering: pixelated;
+}
+.np-title a { color: #ffff00; font-weight: bold; }
+.np-artist { color: #ffffff; font-size: 0.9em; }
+.np-loading { color: #99ccff; font-style: italic; }
+
+/* contador de visitas (moe-counter) */
+.counter-img { max-width: 100%; height: auto; margin-top: 4px; }
+
+/* livro de visitas (giscus) */
+td.guestbook {
+  border-top: 3px groove #6666aa;
+  padding: 16px 22px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.25);
+}
+td.guestbook h2 { text-align: center; }
+.gb-sub { text-align: center; }
+
+/* ============================================================
+   RESPONSIVIDADE — colapsa o tabelão em coluna única no celular
+   ============================================================ */
+@media (max-width: 760px) {
+  body { padding-top: 10px; }
+  table.layout { width: 100%; border-width: 3px; }
+
+  /* tabela de layout vira blocos empilhados */
+  table.layout,
+  table.layout > tbody,
+  table.layout > tbody > tr,
+  table.layout > tbody > tr > td { display: block; width: auto; }
+
+  td.sidebar {
+    width: auto;
+    border-right: none;
+    border-bottom: 3px groove #6666aa;
+  }
+
+  /* hero: texto em cima, PC embaixo */
+  table.hero-inner,
+  table.hero-inner tbody,
+  table.hero-inner tr,
+  table.hero-inner td { display: block; width: auto; }
+  .hero-text { padding-right: 0; }
+  .hero-pc { width: auto; }
+  model-viewer#pc { height: 300px; }
+
+  /* projetos: duas colunas viram empilhadas */
+  table.projects,
+  table.projects tbody,
+  table.projects tr,
+  table.projects td { display: block; width: auto; }
+
+  h1 { font-size: 1.9em; }
+  .btn88 { font-size: 8px; width: 80px; }
+  .nav a { padding: 8px 4px; }
+}

@@ -74,19 +74,28 @@
           <ul class="nav">
             <li><a href="#projetos">★ Projetos</a></li>
             <li><a href="blog/">★ Blog</a></li>
+            <li><a href="#livros">★ Livros</a></li>
             <li><a href="#contato">★ Contato</a></li>
           </ul>
 
           <hr class="rainbow" />
 
+          <!-- música mais tocada (Last.fm) — preenchido via JS lá embaixo -->
+          <div class="nowplaying" id="nowplaying">
+            <h3>🎵 Tocando muito</h3>
+            <p class="np-loading">carregando…</p>
+          </div>
+
+          <hr class="rainbow" />
+
           <p>
             Visitante nº<br />
-            <span class="counter">00042</span>
+            <img class="counter-img"
+                 src="https://count.getloli.com/@joilson-dev?theme=green"
+                 alt="contador de visitas" />
           </p>
           <p>
-            <a href="mailto:joilson7548@gmail.com?subject=Assinando%20seu%20livro%20de%20visitas">
-              📖 Livro de<br />visitas
-            </a>
+            <a href="#livro-de-visitas">📖 Livro de<br />visitas</a>
           </p>
 
           <hr class="rainbow" />
@@ -122,6 +131,41 @@
 
           <h2>📓 <a href="blog/">Blog</a></h2>
           <p>Uns escritos meus de vez em quando.</p>
+
+          <h2 id="livros">📚 Livros</h2>
+          <div class="books">
+            <!-- edita aqui com os teus livros (ou me manda os títulos) -->
+            <p><strong>Lendo agora:</strong> <em>Título do livro</em> — Autor</p>
+            <p>Uns que recomendo:</p>
+            <ul>
+              <li><em>Título 1</em> — Autor <small>· por que vale a pena</small></li>
+              <li><em>Título 2</em> — Autor</li>
+              <li><em>Título 3</em> — Autor</li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+
+      <!-- ===== LIVRO DE VISITAS (Giscus / GitHub Discussions) ===== -->
+      <tr>
+        <td class="guestbook" colspan="2" id="livro-de-visitas">
+          <h2>📖 Livro de visitas</h2>
+          <p class="gb-sub"><small>Deixe um recado — é só entrar com sua conta do GitHub ✍️</small></p>
+          <script src="https://giscus.app/client.js"
+            data-repo="Joilson-Julkoski/portifolio"
+            data-repo-id="R_kgDOQ1BmQQ"
+            data-category="General"
+            data-category-id="DIC_kwDOQ1BmQc4C-Yy-"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="dark"
+            data-lang="pt"
+            crossorigin="anonymous"
+            async>
+          </script>
         </td>
       </tr>
 
@@ -164,6 +208,42 @@
       }
       document.getElementById("prev").addEventListener("click", () => show(i - 1));
       document.getElementById("next").addEventListener("click", () => show(i + 1));
+    </script>
+
+    <!-- música mais tocada via Last.fm -->
+    <script>
+      // 1) crie uma API key em https://www.last.fm/api/account/create (só "Application name")
+      // 2) ligue o scrobbling do YouTube Music -> Last.fm (extensão "Web Scrobbler")
+      // 3) preencha os dois valores abaixo:
+      const LASTFM_USER = "SEU_USUARIO_LASTFM";
+      const LASTFM_API_KEY = "SUA_API_KEY";
+
+      (function () {
+        const box = document.getElementById("nowplaying");
+        if (!box) return;
+        const setMsg = (t) => { box.innerHTML = '<h3>🎵 Tocando muito</h3><p class="np-loading">' + t + "</p>"; };
+        if (LASTFM_USER.startsWith("SEU_") || LASTFM_API_KEY.startsWith("SUA_")) {
+          setMsg("configure o Last.fm 🎧");
+          return;
+        }
+        const url = "https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="
+          + encodeURIComponent(LASTFM_USER) + "&period=7day&limit=1&api_key="
+          + LASTFM_API_KEY + "&format=json";
+        fetch(url)
+          .then((r) => r.json())
+          .then((d) => {
+            const t = d.toptracks && d.toptracks.track && d.toptracks.track[0];
+            if (!t) { setMsg("sem dados ainda"); return; }
+            const img = (t.image && t.image[2] && t.image[2]["#text"]) || "";
+            box.innerHTML =
+              '<h3>🎵 Tocando muito</h3>' +
+              (img ? '<img class="np-cover" src="' + img + '" alt="">' : "") +
+              '<p class="np-title"><a href="' + t.url + '" target="_blank">' + t.name + "</a></p>" +
+              '<p class="np-artist">' + t.artist.name + "</p>" +
+              "<p><small>" + t.playcount + " plays (7 dias)</small></p>";
+          })
+          .catch(() => setMsg("erro ao carregar 😅"));
+      })();
     </script>
   </body>
 </html>
