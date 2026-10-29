@@ -1,249 +1,56 @@
-<!doctype html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>~ Joilson Julkoski ~</title>
-    <link href="./style.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html lang="pt-br">
 
-    <!-- PC 3D: trio de versões FIXAS e compatíveis (não usar "latest"!) -->
-    <script async src="https://ga.jspm.io/npm:es-module-shims@1.7.1/dist/es-module-shims.js"></script>
-    <script type="importmap">
-      { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.min.js" } }
-    </script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer-effects@1.5.0/dist/model-viewer-effects.min.js"></script>
-  </head>
-  <body>
-    <table class="layout">
-      <!-- ===== BANNER (largura total) ===== -->
-      <tr>
-        <td class="banner" colspan="2">
-          <h1>⭐ Joilson aqui! ⭐</h1>
-          <marquee scrollamount="6">
-            *~*~* Bem-vindo(a) ao cantinho do Joilson na internet *~*~*
-            &nbsp; obrigado por visitar! &nbsp; *~*~*~*~*
-          </marquee>
-        </td>
-      </tr>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joilson's Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-      <!-- ===== HERO: texto + PC 3D lado a lado ===== -->
-      <tr>
-        <td class="hero" colspan="2">
-          <table class="hero-inner">
-            <tr>
-              <td class="hero-text">
-                <p>
-                  Desenvolvedor de software. Construo ferramentas web e produtos
-                  com IA — do back-end ao que aparece na tela.
-                </p>
-                <p><small>↻ arrasta pra girar &nbsp;·&nbsp; use ‹ › pra trocar de modelo</small></p>
-              </td>
-              <td class="hero-pc">
-                <div class="viewer">
-                  <button class="arrow" id="prev" aria-label="modelo anterior">‹</button>
-                  <model-viewer
-                    id="pc"
-                    src="assets/old_pc.glb"
-                    camera-controls
-                    auto-rotate
-                    interaction-prompt="none"
-                    camera-orbit="120deg 70deg auto"
-                    camera-target="auto auto auto"
-                    exposure="1"
-                    shadow-intensity="0"
-                    environment-image="neutral">
-                    <effect-composer render-mode="quality">
-                      <outline-effect strength="1000" smoothing="0" color="#00ff66" blend-mode="ADD"></outline-effect>
-                      <glitch-effect strength="0.35" mode="sporadic" blend-mode="default"></glitch-effect>
-                      <pixelate-effect granularity="2" blend-mode="default"></pixelate-effect>
-                    </effect-composer>
-                  </model-viewer>
-                  <button class="arrow" id="next" aria-label="próximo modelo">›</button>
-                </div>
-                <p class="model-name" id="model-name">meu velho PC</p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
+<body>
+    <main>
+        <h1>
+            Hello World
+        </h1>
+        <img src="https://web.archive.org/web/20090829051611/http://www.geocities.com/santuariosfiliales/world_03.gif"
+            title="santuario s filiales world 03" width="128" height="128">
+        <q>
+            Se algo pode dar errado, dará.
+        </q>
+        <span>
+            - Lei de Murphy
+        </span>
 
-      <tr>
-        <!-- ===== MENU LATERAL ===== -->
-        <td class="sidebar">
-          <ul class="nav">
-            <li><a href="#projetos">★ Projetos</a></li>
-            <li><a href="blog/">★ Blog</a></li>
-            <li><a href="#livros">★ Livros</a></li>
-            <li><a href="#contato">★ Contato</a></li>
-          </ul>
+        <a>
+            Projetos
+        </a>
 
-          <hr class="rainbow" />
+        <a>
+            Mídia
+        </a>
 
-          <!-- música mais tocada (Last.fm) — preenchido via JS lá embaixo -->
-          <div class="nowplaying" id="nowplaying">
-            <h3>🎵 Tocando muito</h3>
-            <p class="np-loading">carregando…</p>
-          </div>
+        <a>
+            Blog
+        </a>
+        <h1>
+            <span class="hero-text">World</span>
+        </h1>
+    </main>
 
-          <hr class="rainbow" />
+    <script src="https://bennettfeely.com/ztext/js/ztext.min.js"></script>
 
-          <p>
-            Visitante nº<br />
-            <img class="counter-img"
-                 src="https://count.getloli.com/@joilson-dev?theme=3d-num"
-                 alt="contador de visitas" />
-          </p>
-          <p>
-            <a href="#livro-de-visitas">📖 Livro de<br />visitas</a>
-          </p>
-
-          <hr class="rainbow" />
-
-          <p class="construction">🚧 <span>EM OBRAS</span> 🚧</p>
-        </td>
-
-        <!-- ===== CONTEÚDO ===== -->
-        <td class="content">
-          <h2 id="projetos">&gt;&gt; Projetos <span class="blink">NOVO!</span></h2>
-          <table class="projects">
-            <tr>
-              <td>
-                🔥
-                <h3><a href="https://deepdatadaily.com/" target="_blank">Deep Data Daily</a></h3>
-                <p>
-                  Newsletter diária automatizada com IA: você escolhe seus
-                  tópicos e recebe no email um resumo das notícias mais
-                  relevantes, sem garimpar nada.
-                </p>
-              </td>
-              <td>
-                🔥
-                <h3><a href="https://promptoven.com/" target="_blank">Prompt Oven</a></h3>
-                <p>
-                  Ferramenta que assa os seus prompts: cole um prompt cru e
-                  receba uma versão mais clara e bem estruturada, pronta pra
-                  tirar o melhor do modelo de IA.
-                </p>
-              </td>
-            </tr>
-          </table>
-
-          <h2>📓 <a href="blog/">Blog</a></h2>
-          <p>Uns escritos meus de vez em quando.</p>
-
-          <h2 id="livros">📚 Livros</h2>
-          <div class="books">
-            <!-- edita aqui com os teus livros (ou me manda os títulos) -->
-            <p><strong>Lendo agora:</strong> <em>Título do livro</em> — Autor</p>
-            <p>Uns que recomendo:</p>
-            <ul>
-              <li><em>Título 1</em> — Autor <small>· por que vale a pena</small></li>
-              <li><em>Título 2</em> — Autor</li>
-              <li><em>Título 3</em> — Autor</li>
-            </ul>
-          </div>
-        </td>
-      </tr>
-
-      <!-- ===== LIVRO DE VISITAS (Giscus / GitHub Discussions) ===== -->
-      <tr>
-        <td class="guestbook" colspan="2" id="livro-de-visitas">
-          <h2>📖 Livro de visitas</h2>
-          <p class="gb-sub"><small>Deixe um recado — é só entrar com sua conta do GitHub ✍️</small></p>
-          <script src="https://giscus.app/client.js"
-            data-repo="Joilson-Julkoski/portifolio"
-            data-repo-id="R_kgDOQ1BmQQ"
-            data-category="General"
-            data-category-id="DIC_kwDOQ1BmQc4C-Yy-"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="dark"
-            data-lang="pt"
-            crossorigin="anonymous"
-            async>
-          </script>
-        </td>
-      </tr>
-
-      <!-- ===== RODAPÉ (largura total) ===== -->
-      <tr>
-        <td class="footer-row" colspan="2" id="contato">
-          <div class="buttons">
-            <span class="btn88 netscape">Netscape NOW!</span>
-            <span class="btn88 notepad">Made with NOTEPAD</span>
-            <span class="btn88 html">Valid HTML 4.0</span>
-            <span class="btn88 res">Best viewed 800×600</span>
-          </div>
-          <p>
-            <a target="_blank" href="https://www.linkedin.com/in/joilson-julkoski-programador/">LinkedIn</a>
-            &nbsp;•&nbsp;
-            <a target="_blank" href="https://github.com/Joilson-Julkoski">GitHub</a>
-            &nbsp;•&nbsp;
-            <a href="mailto:joilson7548@gmail.com">Email</a>
-          </p>
-          <p><small>Last updated: 06/2026 &nbsp;·&nbsp; Best viewed in Netscape Navigator</small></p>
-        </td>
-      </tr>
-    </table>
-
-    <!-- carrossel de modelos 3D -->
     <script>
-      const models = [
-        { src: "assets/old_pc.glb",  name: "meu velho PC" },
-        { src: "assets/pinguin.glb", name: "pinguim" },
-        { src: "assets/peixe.glb",   name: "peixe" },
-        { src: "assets/colher.glb",  name: "colher" },
-      ];
-      let i = 0;
-      const mv = document.getElementById("pc");
-      const label = document.getElementById("model-name");
-      function show(n) {
-        i = (n + models.length) % models.length;
-        mv.setAttribute("src", models[i].src);
-        label.textContent = models[i].name;
-      }
-      document.getElementById("prev").addEventListener("click", () => show(i - 1));
-      document.getElementById("next").addEventListener("click", () => show(i + 1));
+        var ztxt = new Ztextify(".hero-text", {
+            depth: "30px",
+            layers: 8,
+            fade: true,
+            direction: "both",
+            event: "pointer",
+            eventRotation: "35deg"
+        });
     </script>
 
-    <!-- música mais tocada via Last.fm -->
-    <script>
-      // 1) crie uma API key em https://www.last.fm/api/account/create (só "Application name")
-      // 2) ligue o scrobbling do YouTube Music -> Last.fm (extensão "Web Scrobbler")
-      // 3) preencha os dois valores abaixo:
-      const LASTFM_USER = "joilson-dev";
-      const LASTFM_API_KEY = "0b6ae8bce47963b19661884c9b1806a0";
+</body>
 
-      (function () {
-        const box = document.getElementById("nowplaying");
-        if (!box) return;
-        const setMsg = (t) => { box.innerHTML = '<h3>🎵 Tocando muito</h3><p class="np-loading">' + t + "</p>"; };
-        if (LASTFM_USER.startsWith("SEU_") || LASTFM_API_KEY.startsWith("SUA_")) {
-          setMsg("configure o Last.fm 🎧");
-          return;
-        }
-        const url = "https://ws.audioscrobbler.com/2.0/?method=user.gettoptracks&user="
-          + encodeURIComponent(LASTFM_USER) + "&period=7day&limit=1&api_key="
-          + LASTFM_API_KEY + "&format=json";
-        fetch(url)
-          .then((r) => r.json())
-          .then((d) => {
-            const t = d.toptracks && d.toptracks.track && d.toptracks.track[0];
-            if (!t) { setMsg("sem dados ainda"); return; }
-            const img = (t.image && t.image[2] && t.image[2]["#text"]) || "";
-            box.innerHTML =
-              '<h3>🎵 Tocando muito</h3>' +
-              (img ? '<img class="np-cover" src="' + img + '" alt="">' : "") +
-              '<p class="np-title"><a href="' + t.url + '" target="_blank">' + t.name + "</a></p>" +
-              '<p class="np-artist">' + t.artist.name + "</p>" +
-              "<p><small>" + t.playcount + " plays (7 dias)</small></p>";
-          })
-          .catch(() => setMsg("erro ao carregar 😅"));
-      })();
-    </script>
-  </body>
 </html>
