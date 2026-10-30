@@ -1,56 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina do Joilson</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joilson's Page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-
-<body>
+  <body>
     <main>
-        <h1>
-            Hello World
-        </h1>
-        <img src="https://web.archive.org/web/20090829051611/http://www.geocities.com/santuariosfiliales/world_03.gif"
-            title="santuario s filiales world 03" width="128" height="128">
-        <q>
-            Se algo pode dar errado, dará.
-        </q>
-        <span>
-            - Lei de Murphy
-        </span>
+      <h1 class="e">
+        <span class="hero-text">Salve Mundo</span>
+      </h1>
 
-        <a>
-            Projetos
-        </a>
+      <img
+        src="https://web.archive.org/web/20090829051611/http://www.geocities.com/santuariosfiliales/world_03.gif"
+        title="santuario s filiales world 03"
+        width="128"
+        height="128"
+      />
 
-        <a>
-            Mídia
-        </a>
+      <q>Se algo pode dar errado, dará.</q>
 
-        <a>
-            Blog
-        </a>
-        <h1>
-            <span class="hero-text">World</span>
-        </h1>
+      <span>- Lei de Murphy</span>
+
+      <a href="/projects">Projetos</a>
+      <a href="/midia">Mídia</a>
+      <a href="/blog">Blog</a>
+      <a href="/updates">Atualizações</a>
     </main>
 
     <script src="https://bennettfeely.com/ztext/js/ztext.min.js"></script>
 
-    <script>
-        var ztxt = new Ztextify(".hero-text", {
-            depth: "30px",
-            layers: 8,
-            fade: true,
-            direction: "both",
-            event: "pointer",
-            eventRotation: "35deg"
-        });
-    </script>
-
-</body>
-
+    <script src="./index.js"></script>
+  </body>
 </html>

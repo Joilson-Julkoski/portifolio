@@ -1,6 +1,30 @@
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+html,
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
 }
 
+* {
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+  width: 100vw;
+  border: 1px solid white;
+}
+
+h1 {
+  font:
+    bold 5em "Georgia",
+    serif;
+  color: #90a4ae;
+}
+
+.z-layer:not(:first-child) {
+  color: #455a64;
+}
