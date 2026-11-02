@@ -1,4 +1,4 @@
-var ztxt = new Ztextify(".hero-text", {
+var ztxt = new Ztextify("h1", {
   depth: "30px",
   layers: 8,
   fade: false,
