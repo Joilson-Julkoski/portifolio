@@ -1,12 +1,3 @@
-var ztxt = new Ztextify("h1", {
-  depth: "30px",
-  layers: 8,
-  fade: false,
-  direction: "both",
-  event: "pointer",
-  eventRotation: "35deg",
-});
-
 async function sleep(ms) {
   await new Promise((resolve) => setTimeout(resolve, ms));
 }

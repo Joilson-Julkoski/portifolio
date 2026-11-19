@@ -25,13 +25,10 @@ main {
 
 h1 {
   font-size: 3em;
-  letter-spacing: -3px;
   color: #90a4ae;
+  font-weight: bold;
 }
 
-.z-layer:not(:first-child) {
-  color: #455a64;
-}
 
 .about {
   display: flex;
@@ -57,4 +54,8 @@ h1 {
 .list-item {
   margin-bottom: 24px;
   border-top: 1px solid white;
+}
+
+.hobies-list {
+  font-weight: bold;
 }
